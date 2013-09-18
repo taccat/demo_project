@@ -17,6 +17,7 @@ def home(request):
     # Check whether this request includes a query string to translate.
     query_string = request.GET.get('query', None)
     if query_string:
+        query_string = query_string.upper()
         reverse_complement = ''
         for base in query_string:
             reverse_complement += BASE_PAIRING[base]
