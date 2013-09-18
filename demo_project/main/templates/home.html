@@ -1,0 +1,15 @@
+<h1>Reverse Complementor</h1>
+
+<p>
+  <form method="GET" action=".">
+    <b>Enter a sequence to complement:</b>
+    <input type="text" name="query"
+        {% if query_string %}value="{{query_string}}"{% endif %}>
+  </form>
+</p>
+
+{% if reverse_complement %}
+  <p>
+    <b>Reverse Complement</b>: {{reverse_complement}}
+  </p>
+{% endif %}
