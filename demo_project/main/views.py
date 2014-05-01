@@ -2,7 +2,7 @@
 Views.
 """
 
-from django.shortcuts import render
+#from django.shortcuts import render
 # from django.http import HTTPResponse
 
 BASE_PAIRING = {
@@ -92,13 +92,16 @@ def converter(baseSequence):
 
         codon += x
         if counter != 0 and counter % 3 == 0:
-            returnedSequence += dnaToAminoAcid[codon]
-            returnedSequence += ' '
-            codon = ''
+            if codon in dnaToAminoAcid:
+                returnedSequence += dnaToAminoAcid[codon]
+                returnedSequence += ' '
+                codon = ''
+            else:
+                return "I need real codons, please."
         counter += 1
     return returnedSequence
 
-print converter('ACCCAGTGA')
+print converter('ATC')
 
 
 def home(request):
