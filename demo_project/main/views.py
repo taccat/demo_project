@@ -117,8 +117,10 @@ def home(request):
 
             # checks if base in allowed bases; returns error message if not.
             if base not in BASE_PAIRING:
+                context['query_string'] = query_string
                 context[
                     'reverse_complement'] = "Not-bases detected. Here's a good link to learn more: http://en.wikipedia.org/wiki/DNA_bases"
+                context['amino_acids'] = None
                 return render(request, 'home.html', context)
 
             else:
