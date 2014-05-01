@@ -2,7 +2,7 @@
 Views.
 """
 
-#from django.shortcuts import render
+from django.shortcuts import render
 # from django.http import HTTPResponse
 
 BASE_PAIRING = {
