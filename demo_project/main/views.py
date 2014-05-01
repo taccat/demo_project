@@ -119,7 +119,8 @@ def home(request):
             if base not in BASE_PAIRING:
                 context['query_string'] = query_string
                 context[
-                    'reverse_complement'] = 'Not-bases detected. A good link <a href ="http://en.wikipedia.org/wiki/DNA_bases"> link </a> to learn more.'
+                    'reverse_complement'] = "Sorry, "
+                context['link'] = ' '
                 context['amino_acids'] = None
                 return render(request, 'home.html', context)
 
