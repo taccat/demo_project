@@ -131,7 +131,7 @@ def home(request):
                 if aa == '':
                     context['amino_acids'] = 'Sorry, not enough bases.'
                 else:
-                    context['amino_acids'] = aa
+                    context['amino_acids'] = converter(reverse_complement)
 
         context['query_string'] = query_string
         context['reverse_complement'] = reverse_complement
