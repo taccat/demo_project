@@ -122,7 +122,11 @@ def home(request):
                 return render(request, 'home.html', context)
             else:
                 reverse_complement += BASE_PAIRING[base]
-                context['amino_acids'] = converter(reverse_complement)
+                aa = converter(reverse_complement)
+                if aa == '':
+                    context['amino_acids'] = 'Sorry, not enough bases.'
+                else:
+                    context['amino_acids'] = aa
         context['query_string'] = query_string
         context['reverse_complement'] = reverse_complement
 
