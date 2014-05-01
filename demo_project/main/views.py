@@ -19,6 +19,7 @@ def home(request):
     if query_string:
         query_string = query_string.upper()
         reverse_complement = ''
+        base = ''
         for base in query_string:
             if base not in BASE_PAIRING:
                 context ['reverse_complement'] = "Not-bases detected. Here's a good link to learn more: http://en.wikipedia.org/wiki/DNA_bases"
